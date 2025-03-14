@@ -1,0 +1,200 @@
+* {
+    margin: 0;
+    padding: 0;
+    box-sizing: border-box;
+    user-select: none;
+}
+
+@keyframes gradientMove {
+    0% {
+        background: linear-gradient(to right, blueviolet, violet);
+    }
+    50% {
+        background: linear-gradient(to left, blueviolet, violet);
+    }
+    100% {
+        background: linear-gradient(to right, blueviolet, violet);
+    }
+}
+
+body {
+    width: 100vw;
+    height: 100vh;
+    background: linear-gradient(to right, blueviolet, violet) no-repeat center center/cover;
+    animation: gradientMove 6s ease infinite;
+    display: flex;
+    flex-direction: column;
+    justify-content: flex-end;
+    font-family: Arial, sans-serif;
+}
+
+/* Barre des tâches */
+#taskbar {
+    width: 100%;
+    height: 50px;
+    background: rgba(30, 30, 30, 0.9);
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    position: fixed;
+    bottom: 0;
+}
+
+#taskbar-icons {
+    display: flex;
+    gap: 15px;
+    position: relative;
+}
+
+.task-icon, #launcher-btn {
+    width: 40px;
+    height: 40px;
+    cursor: pointer;
+    transition: transform 0.2s;
+    position: relative;
+}
+
+/* Affichage du texte au survol des icônes */
+.task-icon::after,
+#launcher-btn::after {
+    content: attr(data-title);
+    position: absolute;
+    bottom: -30px;
+    left: 50%;
+    transform: translateX(-50%);
+    background-color: rgba(0, 0, 0, 0.7);
+    color: white;
+    font-size: 12px;
+    padding: 5px;
+    border-radius: 5px;
+    opacity: 0;
+    visibility: hidden;
+    transition: opacity 0.3s, visibility 0.3s;
+}
+
+/* Affichage du texte au survol */
+.task-icon:hover::after,
+#launcher-btn:hover::after {
+    opacity: 1;
+    visibility: visible;
+}
+
+.task-icon:hover, #launcher-btn:hover {
+    transform: scale(1.1);
+}
+
+/* Modal du Launcher */
+#launcher-modal {
+    position: fixed;
+    top: 0;
+    left: 0;
+    width: 100vw;
+    height: 100vh;
+    background: rgba(0, 0, 0, 0.6);
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    opacity: 0;
+    visibility: hidden;
+    transition: opacity 0.3s ease, visibility 0.3s;
+}
+
+.modal-content {
+    background: white;
+    padding: 20px;
+    border-radius: 10px;
+    width: 300px;
+    text-align: center;
+    position: relative;
+    transform: scale(0.8);
+    transition: transform 0.3s ease;
+}
+
+/* Bouton de fermeture */
+#close-launcher {
+    position: absolute;
+    top: 10px;
+    right: 10px;
+    border: none;
+    background: none;
+    font-size: 20px;
+    cursor: pointer;
+}
+
+/* Affichage du modal */
+#launcher-modal.show {
+    opacity: 1;
+    visibility: visible;
+}
+
+#launcher-modal.show .modal-content {
+    transform: scale(1);
+}
+
+#terminal {
+    display: none; /* Masqué par défaut */
+    position: fixed;
+    top: 50%;
+    left: 50%;
+    transform: translate(-50%, -50%);
+    background: #121212;
+    color: #00FF00;
+    border-radius: 8px;
+    width: 80%;
+    max-width: 600px;
+    height: 400px;
+    box-shadow: 0 0 10px rgba(0, 255, 0, 0.5);
+    font-family: 'Courier New', Courier, monospace;
+    z-index: 10;
+    padding: 15px;
+    display: flex;
+    flex-direction: column;
+}
+
+
+.terminal-header {
+    display: flex;
+    justify-content: space-between;
+    align-items: center;
+    font-size: 16px;
+    border-bottom: 1px solid #00FF00;
+    padding-bottom: 5px;
+    margin-bottom: 10px;
+}
+
+#close-terminal {
+    background: none;
+    border: none;
+    color: #00FF00;
+    font-size: 20px;
+    cursor: pointer;
+}
+
+.terminal-output {
+    flex-grow: 1;
+    overflow-y: auto;
+    margin-bottom: 10px;
+}
+
+#terminal-input {
+    background: transparent;
+    border: none;
+    color: #00FF00;
+    outline: none;
+    font-size: 16px;
+    width: 100%;
+}
+
+#terminal-input::placeholder {
+    color: #555;
+}
+
+/* Ajouter un effet au bouton du terminal dans la barre des tâches */
+#terminal-btn:hover {
+    transform: scale(1.1);
+}
+
+#terminal-btn {
+    width: 35px;
+    height: 25px;
+}

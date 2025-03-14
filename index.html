@@ -1,13 +1,114 @@
 <!DOCTYPE html>
 <html lang="en">
+
 <head>
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
-    <title>AltOS | Une alternative au OS</title>
+    <title>AltOS | An alternative to Operating System</title>
+    <style>
+        body {
+            font-family: Arial, sans-serif;
+            background: linear-gradient(to right, grey, #000000);
+            color: white;
+            margin: 0;
+            padding: 20px;
+            text-align: center;
+            scrollbar-color: white;
+        }
+
+        header {
+            background-color: #2c3e50;
+            color: white;
+            padding: 20px;
+            border-radius: 5px;
+            margin-bottom: 30px;
+            width: 100%;
+            box-sizing: border-box;
+        }
+
+        h1 {
+            font-size: 2.2rem;
+            margin: 0;
+            line-height: 1.2;
+        }
+
+        .description {
+            background-color: #34495e; /* Darker background for the box */
+            border-radius: 10px; /* Rounded corners */
+            padding: 20px;
+            box-shadow: 0 4px 8px rgba(0, 0, 0, 0.2); /* Soft shadow for depth */
+            max-width: 650px;
+            margin: 0 auto;
+        }
+
+        .description p {
+            font-size: 1.1rem;
+            line-height: 1.8;
+            margin: 0;
+        }
+
+        br {
+            margin-bottom: 3rem;
+        }
+
+        /* Adjustments for responsive design */
+        @media (max-width: 768px) {
+            body {
+                padding: 10px;
+            }
+
+            header {
+                padding: 15px;
+            }
+
+            h1 {
+                font-size: 1.8rem;
+            }
+
+            .description p {
+                font-size: 1rem;
+            }
+        }
+        /* CSS for the button */
+        button {
+            background-color: #2c3e50;
+            color: white;
+            border: none;
+            padding: 12px 24px;
+            font-size: 1.1rem;
+            border-radius: 5px;
+            cursor: pointer;
+            transition: background-color 0.3s ease, transform 0.2s ease;
+        }
+
+        button:hover {
+            background-color: #1abc9c; /* Color when hovering */
+            transform: translateY(-3px); /* Slight lift effect */
+        }
+
+        button:active {
+            background-color: #16a085; /* Darker color when clicked */
+            transform: translateY(1px); /* Slight press effect */
+        }
+    </style>
 </head>
+
 <body>
     <header>
-        <h1></h1>
+        <h1>AltOS | Traditional Operating System alternative</h1>
     </header>
+    <br><br><br>
+    <section class="description">
+        <p>
+            AltOS is a cloud-based operating system accessible through a web browser.
+            <br>
+            It offers a desktop-like interface with file management, apps, and offline support.
+            <br>
+            Key features include a file explorer, Markdown editor, terminal, media player, and dark/light mode themes.
+        </p>
+    </section>
+    <br><br><br>
+    <a href="AltOS.html"><button>Go to AltOS</button></a>
 </body>
+
 </html>
