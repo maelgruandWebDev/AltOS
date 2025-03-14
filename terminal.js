@@ -38,12 +38,16 @@ terminalInput.addEventListener("keydown", (event) => {
             terminalOutput.innerHTML += "<p><span style='color: #00FF00;'>clear</span> - Efface l'écran du terminal.</p>";
             terminalOutput.innerHTML += "<p><span style='color: #00FF00;'>date</span> - Affiche la date et l'heure actuelle.</p>";
             terminalOutput.innerHTML += "<p><span style='color: #00FF00;'>whoami</span> - Affiche le nom d'utilisateur actuel.</p>";
+            terminalOutput.innerHTML += "<p><span style='color: #00FF00;'>echo [texte]</span> - Affiche le texte fourni.</p>"; // Ajouter la commande echo à l'aide de l'aide
         } else if (command === "date") {
             const currentDate = new Date();
             const formattedDate = currentDate.toLocaleString(); // Affiche la date et l'heure locale
             terminalOutput.innerHTML += `<p>La date et l'heure actuelles sont : ${formattedDate}</p>`;
         } else if (command === "whoami") {
             terminalOutput.innerHTML += "<p>Nom d'utilisateur : utilisateur d'AltOS</p>";
+        } else if (command.startsWith("echo ")) {
+            const message = command.slice(5); // Récupérer le texte après "echo "
+            terminalOutput.innerHTML += `<p>${message}</p>`; // Afficher le message dans le terminal
         } else {
             terminalOutput.innerHTML += "<p>Commande inconnue. Tapez 'help' pour la liste des commandes.</p>";
         }
