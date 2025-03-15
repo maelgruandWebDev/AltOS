@@ -1,0 +1,58 @@
+<!DOCTYPE html>
+<html lang="fr">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>AltOS</title>
+    <!-- Lien vers le CSS -->
+    <link rel="stylesheet" href="styles.css">
+    <!-- Lien vers le manifest JSON -->
+    <link rel="manifest" href="manifest.json"> 
+
+
+</head>
+<body>
+
+    <!-- Bureau -->
+    <div id="desktop"></div>
+
+    <!-- Modal du Launcher -->
+    <div id="launcher-modal" class="hidden">
+        <div class="modal-content">
+            <button id="close-launcher">&times;</button>
+            <h2>AltOS</h2>
+            <p>Lancement des applications...</p>
+        </div>
+    </div>
+
+    <!-- Barre des tâches -->
+    <div id="taskbar">
+        <div id="taskbar-icons">
+            <img src="./assets/logo.png" id="launcher-btn" alt="Launcher" data-title="Lancer AltOS">
+            <img src="./assets/terminal-logo.png" id="terminal-btn" alt="Terminal" data-title="Ouvrir le terminal">
+        </div>
+    </div>
+
+    <!-- Fenêtre du Terminal -->
+    <div id="terminal" class="hidden">
+        <div class="terminal-header">
+            <h3>Terminal</h3>
+            <button id="close-terminal">&times;</button>
+        </div>
+        <div class="terminal-output" id="terminal-output">
+            <p>Bienvenue sur AltOS ! Tapez une commande.</p>
+        </div>
+        <input type="text" id="terminal-input" placeholder="Entrez une commande..." />
+    </div>
+
+    <script src="script.js"></script>
+    <script src="terminal.js"></script>
+    <script>
+        if ("serviceWorker" in navigator) {
+        navigator.serviceWorker.register("/service-worker.js")
+          .then(() => console.log("Service Worker enregistré !"))
+          .catch((err) => console.log("Erreur Service Worker :", err));
+      }
+    </script>
+</body>
+</html>

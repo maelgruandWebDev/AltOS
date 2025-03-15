@@ -2,6 +2,7 @@
 
 ## 📝 Introduction
 
+Dépôt Github : https://github.com/maelgruand1/AltOS  
 Un système d'exploitation cloud accessible depuis un navigateur, hébergé sur GitHub Pages.
 
 ### 🔹 Objectifs :
@@ -25,12 +26,14 @@ Un système d'exploitation cloud accessible depuis un navigateur, hébergé sur 
 - Barre des tâches avec horloge, raccourcis et menu principal
 - Gestion des fenêtres avec redimensionnement et superposition
 - Système de bureau avec icônes et fond d'écran personnalisable
+- **Écran de connexion avec authentification locale** (PIN) désactivée par défaut, activable dans les paramètres
 
 ### 📌 Idées supplémentaires :
 
 - Mode sombre
 - Système de widgets (météo, notes rapides...)
-- Gestion multi-utilisateurs avec profils locaux
+- Gestion multi-utilisateurs avec profils locaux (optionnel)
+- **Fonds d'écran personnalisés** pour mode clair et mode sombre, avec le logo de AltOS
 
 ---
 
@@ -45,12 +48,13 @@ Un système d'exploitation cloud accessible depuis un navigateur, hébergé sur 
 - Possibilité d'organiser les fichiers en favoris
 - Prise en charge des fichiers compressés (ZIP)
 - Aperçu des fichiers (images, PDF, textes)
+- **Permissions sur les dossiers** : Lecture et écriture pour les dossiers utilisateurs, lecture seule pour les dossiers système
 
 ### 🖊️ Applications intégrées
 
 - **Éditeur de texte** : prise en charge du Markdown, coloration syntaxique pour le code
 - **Explorateur de fichiers** : gestion avancée des fichiers et dossiers
-- **Terminal basique** : commandes simulées en JavaScript, gestion des fichiers via terminal
+- **Terminal basique** : commandes exécutées via des scripts JS, gestion des fichiers via terminal
 - **Navigateur web simplifié** : possibilité d'ouvrir des pages internes et externes
 - **Bloc-notes** : stockage rapide de notes temporaires
 - **Gestionnaire de tâches** : suivi des processus actifs dans l'OS cloud
@@ -77,6 +81,7 @@ Un système d'exploitation cloud accessible depuis un navigateur, hébergé sur 
 
 - Sandbox JavaScript pour éviter l’exécution de scripts malveillants
 - Permissions pour limiter l’accès aux données
+- Authentification locale via **PIN** (désactivée par défaut)
 
 ---
 
@@ -97,7 +102,5 @@ Un système d'exploitation cloud accessible depuis un navigateur, hébergé sur 
 3. **Implémentation de l’explorateur de fichiers avec IndexedDB**
 4. **Ajout des applications de base (éditeur, terminal, navigateur, gestionnaire de tâches)**
 5. **Optimisation des performances et mode hors ligne**
-6. **Déploiement sur GitHub Pages**
-
----
-
+6. **Ajout de l'écran de connexion et de l'authentification PIN**
+7. **Déploiement sur GitHub Pages**
