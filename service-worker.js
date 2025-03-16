@@ -2,6 +2,7 @@ const CACHE_NAME = "altos-cache-v1";
 const urlsToCache = [
   "/",
   "/index.html",
+  "/AltOS.html",
   "/styles.css",
   "/script.js",
   "/assets/logo.png"
